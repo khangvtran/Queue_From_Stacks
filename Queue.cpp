@@ -25,6 +25,7 @@ void Queue::dequeue()
 			s2.push(s1.peek());
 			s1.pop();
 		}
+		s2.pop();
 	}
 }
 
@@ -36,9 +37,11 @@ int Queue::getSize()
 	return s1.getSize() + s2.getSize();
 }
 
+
+
 bool Queue::empty()
 {
-	return (s1.empty() || s2.empty());
+	return s1.empty() && s2.empty();
 }
 
 string Queue::getFront()
@@ -54,6 +57,14 @@ string Queue::getFront()
 		}
 		return s2.peek();
 	}
+}
+
+/************* additional queue operations *************/
+void Queue::print()
+{
+	s2.print();
+	s1.reversePrint();
+
 }
 
 

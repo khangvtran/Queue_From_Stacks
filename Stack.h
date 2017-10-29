@@ -32,8 +32,11 @@ private:
    Node* top;
    int size;
 
+   void reversePrint(Node* node) const;
+   //Helper function for the public reversePrint() function.
+   //Recursively prints the data in a Stack in reverse.
 
-    public:
+	public:
         /**constructors and destructors*/
 
         Stack();
@@ -82,6 +85,11 @@ private:
 
        void print() const;
        //prints the elements in the stack each element separate by a blank space to stdout
+
+       void reversePrint() const;
+       //Wrapper function that calls the reverse helper function to print a Stack in reverse
+       //prints nothing if the Stack is empty
+
 };
 
 /*************************************************************************/
@@ -246,6 +254,28 @@ void Stack<stackdata>::print() const
 		temp = temp->link;
 	}
 	cout << endl;
+}
+
+
+template <class stackdata>         //PUBLIC
+void Stack<stackdata>::reversePrint() const
+{
+	reversePrint(top);
+}
+
+
+template <class stackdata>         // PRIVATE
+void Stack<stackdata>::reversePrint(Node* node) const
+{
+	Node* temp = node;
+	if (temp == NULL) return;
+	else
+	{
+		reversePrint(temp->link);
+		cout << temp->data << " ";
+		if (temp == top) cout << endl;
+	}
+
 }
 
 
