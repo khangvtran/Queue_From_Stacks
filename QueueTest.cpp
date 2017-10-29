@@ -43,6 +43,7 @@ int main()
 	cout << endl;
 
 	cout << "******** Test on Queue with values only in stack s2 ********" << endl;
+	cout << "- First, we dequeue to push all data to stack 2 and pop all from stack 1" << endl;
 	Q1.dequeue();
 	cout << "- Test getSize(). Should get 2." << endl;
 	cout << Q1.getSize() << endl;
@@ -62,9 +63,50 @@ int main()
 	cout << "- Test getFront(). Should still get B" << endl;
 	cout << Q1.getFront() << endl;
 
-
-
-
-
 	return 0;
 }
+
+
+/*
+
+ 4 3 2 1
+1 2 3 4
+******** Test on empty Queue ********
+- Test getSize(). Should get 0.
+0
+- Test empty(). Should print 'empty'
+empty
+- Test print(). Should get an empty line
+
+- Test getFront(). Should get error. Comment out code
+
+******** Test on Queue with values only in stack s1 ********
+- Test getSize(). Should get 3.
+3
+- Test empty(). Should print 'Not empty'
+Not empty
+- Test print(). Should get A B C
+
+A B C
+- Test getFront(). Should get A
+A
+
+******** Test on Queue with values only in stack s2 ********
+- Test getSize(). Should get 2.
+2
+- Test print(). Should get B C
+B C
+- Test getFront(). Should get B
+B
+******** Test on Queue with values only in both stack s1 and s2 ********
+- Test getSize(). Should get 5.
+5
+- Test print(). Should get B C (1st line) and D E F (2nd line)
+B C
+D E F
+- Test getFront(). Should still get B
+B
+
+
+
+ */
